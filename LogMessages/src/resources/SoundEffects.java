@@ -6,12 +6,12 @@ import java.net.URL;
 import javax.sound.sampled.Clip;
 import javax.swing.JFrame;
 
-public class SoundEffects{
+public class SoundEffects{ // Sound effects class for sound and audio output. 
 
     public static Clip clip2;
     public static Clip clip1;
 
-    public void Run(String filePath) throws InterruptedException {
+    public void Run(String filePath) throws InterruptedException { // Run method along with a file path parameter.
 
         JFrame f = new JFrame();
         f.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
@@ -32,7 +32,7 @@ public class SoundEffects{
         } 
     }
 
-    public void Run2(String filePath) throws InterruptedException {
+    public void Run2(String filePath) throws InterruptedException { // 2nd Run method along with the sound effects. 
 
         JFrame f = new JFrame();
         f.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
