@@ -2,7 +2,7 @@ package LogMessage;
 import javax.swing.*;
 import java.util.ArrayList;
 
-public class FullMessages {
+public class FullMessages { // Full messages class containing all message presents along with helper methods.
 
     public static ArrayList<Messages> FullMessages = new ArrayList<>();
 
@@ -10,8 +10,8 @@ public class FullMessages {
         
     }
 
-    public static void generateFullMessages() {
-        FullMessages.add(new Messages("Client", "Security alert – repeated login failures"));
+    public static void generateFullMessages() { // Generates list of helper methods. 
+        FullMessages.add(new Messages("Client", "Security alert â€“ repeated login failures"));
         FullMessages.add(new Messages("Server", "File not found"));
         FullMessages.add(new Messages("Webserver", "Disk offline"));
         FullMessages.add(new Messages("DiskDrive", "No records available"));
@@ -23,7 +23,7 @@ public class FullMessages {
         FullMessages.add(new Messages("FilePath", "The system cannot find the path specified"));
     }
 
-    public static void addMessage() {
+    public static void addMessage() { // Helper method for the addMessage option within window. 
     	String id = JOptionPane.showInputDialog("Please enter Machine ID: ");
         String description = JOptionPane.showInputDialog("Please enter description: ");
         if(id.equals(null) || description.equals(null) || description.length() == 0 || id.length() == 0) {
@@ -33,7 +33,7 @@ public class FullMessages {
         FullMessages.add(new Messages(id, description));
     }
 
-    public static void addRandomDes() {
+    public static void addRandomDes() { // Adds random description of the list.
         String choice = JOptionPane.showInputDialog("Type (random) to generate random description for a random Machine ID");
         if(choice.equals(null) || choice.length() == 0) {
             JOptionPane.showMessageDialog(null,"Information Inputed Was Incorrect, Please Try Again");
@@ -47,15 +47,15 @@ public class FullMessages {
 
     }
 
-    private static void addRandomDes2() {
+    private static void addRandomDes2() { // 2nd Variation of the randomizer.
         FullMessages.add(new Messages(Messages.ids.get((int)(Math.random() * Messages.ids.size())), Messages.descriptions.get((int)(Math.random() * Messages.descriptions.size()))));
     }
 
-    private static void addRandomDes2(String id) {
+    private static void addRandomDes2(String id) { // 3rd Variation with randomizer including string parameter.
         FullMessages.add(new Messages(id, Messages.descriptions.get((int)(Math.random() * Messages.descriptions.size()))));
     }
 
-    public static void remove() {
+    public static void remove() { // Remove message method for options within list.
         String choice = JOptionPane.showInputDialog("Type (keyword) to remove message by keyword or type (id) to remove message by Machine ID");
         if(choice.equals(null) || choice.length() == 0) {
             JOptionPane.showMessageDialog(null,"Incorrect Information!");
@@ -83,7 +83,7 @@ public class FullMessages {
         }
     }
 
-    private static void remove1(String id) {
+    private static void remove1(String id) { // 2nd Variation of the removal method via identification.
         for(int i = 0; i < FullMessages.size(); i++) {
             if(FullMessages.get(i).getId().equals(id)) {
                 Messages.ids.remove(FullMessages.get(i).getId());
@@ -93,7 +93,7 @@ public class FullMessages {
         }
     }
 
-    private static void remove2(String keyword) {
+    private static void remove2(String keyword) { // 3rd Variation of the removal method via keyword.
         for(int i = 0; i < FullMessages.size(); i++) {
             if(FullMessages.get(i).getMessage().contains(keyword)) {
                 FullMessages.remove(FullMessages.get(i));
@@ -102,7 +102,7 @@ public class FullMessages {
         }
     }
 
-    public static void search() {
+    public static void search() { // Search helper method to search within the list.
         String choice = JOptionPane.showInputDialog("Type (keyword) to search for all messages containing keyword or type (id) to search for all messages containing that ID");
         if(choice.equals(null) || choice.length() == 0) {
             JOptionPane.showMessageDialog(null,"Incorrect Information!");
@@ -132,7 +132,7 @@ public class FullMessages {
         }
     }
 
-    private static void search1(String id) {
+    private static void search1(String id) { // 2nd Variation of the search method via identification.
         String messages = "";
         for(Messages msg: FullMessages) {
             if(msg.getId().equals(id)) {
@@ -143,7 +143,7 @@ public class FullMessages {
 
     }
 
-    private static void search2(String keyword) {
+    private static void search2(String keyword) { // 3rd Variation of the search method via keyword.
         String messages = "";
         for(Messages msg: FullMessages) {
             if(msg.getMessage().contains(keyword)) {
@@ -153,7 +153,7 @@ public class FullMessages {
         JOptionPane.showMessageDialog(null, ("All messages found with keyword: " + keyword + "\n" + messages));
     }
 
-    public static String showCount() {
+    public static String showCount() { // Show count method to reutrn and show overall count of messages in list.
         String s = "";
         int cnt = 0;
         for(String word: Messages.ids) {
@@ -169,7 +169,7 @@ public class FullMessages {
         return s;
     }
 
-    public static void showMessages() {
+    public static void showMessages() { // Show message method to show visible list of messages.
         String s = "";
         for(Messages msg: FullMessages) {
             s += msg.getMessage() + "\n";
