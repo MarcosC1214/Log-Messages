@@ -5,9 +5,9 @@ import java.net.URL;
 import javax.swing.ImageIcon;
 import javax.swing.JOptionPane;
 
-public class Images {
+public class Images { // Images class for formattig and rescaling images. 
 
-    public void  display(String y, String x, String z) {
+    public void  display(String y, String x, String z) { // Display image helper method. 
         URL resource = getClass().getResource(y);
         ImageIcon icon = new ImageIcon(resource);
         Image imageSize = icon.getImage();
