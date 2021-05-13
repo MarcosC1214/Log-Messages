@@ -41,7 +41,7 @@ import java.awt.event.KeyAdapter;
 import java.awt.event.KeyEvent;
 import java.awt.event.KeyListener;
 
-public class Gui extends JPanel {
+public class Gui extends JPanel { // GUI class for all visible panels and effects.
 	
 	public static SoundEffects sound = new SoundEffects();
 	protected static final String inputValue = null;
@@ -58,7 +58,7 @@ public class Gui extends JPanel {
 	/**
 	 * @wbp.parser.entryPoint
 	 */
-	void createAndShowGUI() throws IOException {
+	void createAndShowGUI() throws IOException { // GUI initializer method that runs all panels.
 		
 		JFrame frmMainMenu = new JFrame("Main Menu");
 		frmMainMenu.setBackground(Color.BLACK);
@@ -203,7 +203,7 @@ public class Gui extends JPanel {
         frmMainMenu.pack();
         frmMainMenu.setVisible(true);
 	}
-	public void SoundPlusImage(String s, String x, String y, String z) throws Exception {
+	public void SoundPlusImage(String s, String x, String y, String z) throws Exception { // Sound effects method.
         SoundEffects.clip1.stop();
         sound2.Run2(s);
         image.display(x, y, z);
