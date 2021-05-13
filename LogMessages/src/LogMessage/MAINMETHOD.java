@@ -9,12 +9,12 @@ import javax.swing.JOptionPane;
 import resources.SoundEffects;
 import LogMessage.Gui;
 
-public class MAINMETHOD {
+public class MAINMETHOD { // Main booter method to run the whole program.
 
 	public static SoundEffects sound = new SoundEffects();
 	
 	@SuppressWarnings("unused")
-	public static void main(String[] args) throws Exception {
+	public static void main(String[] args) throws Exception { // Satic method to run program. 
 		FullMessages.generateFullMessages();
 		
 		// TODO Auto-generated method stub
